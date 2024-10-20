@@ -1,5 +1,3 @@
-import React from "react";
-
 const ProjectCard = ({ link, imgUrl, name, text }) => (
       <article>
             <a className="box is-special item" href={link}>

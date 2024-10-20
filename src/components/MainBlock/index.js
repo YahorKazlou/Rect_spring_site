@@ -1,5 +1,3 @@
-import React from "react";
-
 const MainBlock = () => (
       <div className="markdown hero">
             <div className="container my-6">

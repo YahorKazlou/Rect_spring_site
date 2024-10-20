@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import ProjectsList from "./ProjectsList";
 import SearchBar from "./SearchBar";
 
@@ -62,7 +62,7 @@ const Projects = () => {
       };
 
       return (
-            <div class="has-background-light py-6 has-bing-bordder-bottom">
+            <div className="has-background-light py-6 has-bing-bordder-bottom">
                   <SearchBar onSearch={filterProjects} />
                   <ProjectsList projects={projects} />
             </div>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import debounce from "../../utils/debounce";
 
 const SearchBar = ({ onSearch }) => {
@@ -15,7 +15,7 @@ const SearchBar = ({ onSearch }) => {
                   value={value}
                   onChange={onChange}
                   type="text"
-                  class="searchInput"
+                  className="searchInput"
                   placeholder="search..."
             />
       );
