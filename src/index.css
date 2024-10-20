@@ -24,7 +24,7 @@ body {
 .navbar-link:not(.is-arrowless):after {
       border-color: #485fc7;
       margin-top: -0.375em;
-      right: 0.5em;
+      right: 0.5rem;
 }
 
 .searchInput {
@@ -95,6 +95,7 @@ body {
       position: relative;
       align-items: center;
       display: flex;
+      line-height: 1.5;
 }
 
 .navbar-menu-desktop div.navbar-item {
@@ -137,6 +138,8 @@ a.navbar-item:hover {
 .svg-inline--fa {
       margin-left: 8px;
       height: 1em;
+      position: relative;
+      top: 2px;
 }
 
 .hero {
@@ -350,9 +353,9 @@ article {
       a.navbar-item {
             font-family: "Open Sans", sans-serif;
       }
-      li {
+      /* li {
             height: 36px;
-      }
+      } */
 }
 
 @media (max-width: 1000px) {
@@ -527,5 +530,11 @@ article {
       .default-banner .container,
       .main .container {
             padding: 0 2rem;
+      }
+}
+
+@media screen and (max-width: 1024px) {
+      .projects .hero .description {
+            font-size: 1.3rem;
       }
 }

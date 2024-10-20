@@ -1,4 +1,4 @@
-const DropdownElement = ({ type, name }) => {
+const DropdownElement = ({ type, name, icon }) => {
       if (type === "subheader") {
             return (
                   <li>
@@ -13,6 +13,7 @@ const DropdownElement = ({ type, name }) => {
                         className={`navbar-item ${type === "viewall" ? " is-link mb-5" : ""}`}
                   >
                         {name}
+                        {icon}
                   </a>
             </li>
       );

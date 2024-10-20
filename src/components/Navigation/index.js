@@ -1,6 +1,7 @@
 import NavDesktop from "./DesktopNavigation/NavDesktop";
 import NavMobile from "./MobileNavigation/NavMobile";
 import getWindowDimensions from "../../hooks/useWindowDimensions";
+import SpringIntialisr from "../../assets/spring-initializr";
 
 const navArray = [
       {
@@ -41,7 +42,7 @@ const navArray = [
                   { name: "View all projects", type: "viewall" },
                   { name: "DEVELOPMENT TOOLS", type: "subheader" },
                   { name: "Spring Tools 4" },
-                  { name: "Spring Initializr", icon: null },
+                  { name: "Spring Initializr", icon: <SpringIntialisr /> },
             ],
       },
       {
