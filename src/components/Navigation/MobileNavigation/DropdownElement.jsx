@@ -1,21 +1,18 @@
-const DropdownElement = ({ type, name }) => {
-      if (type === "subheader") {
-            return (
-                  <li>
-                        <div className="navbar-item">{name}</div>
-                  </li>
-            );
-      }
+import { NAV_ELEMENT_TYPES } from '../../../constants/navigation';
 
-      return (
-            <li>
-                  <a
-                        className={`navbar-item ${type === "viewall" ? " is-link mb-5" : ""}`}
-                  >
-                        {name}
-                  </a>
-            </li>
-      );
-};
+const DropdownElement = ({ type, name, icon }) => (
+    <li>
+        {type === NAV_ELEMENT_TYPES.SUBHEADER ? (
+            <div className="navbar-item">{name}</div>
+        ) : (
+            <a
+                className={`navbar-item ${type === NAV_ELEMENT_TYPES.VIEWALL ? ' is-link view-all-projects' : ''}`}
+            >
+                {name}
+                {icon}
+            </a>
+        )}
+    </li>
+);
 
 export default DropdownElement;
