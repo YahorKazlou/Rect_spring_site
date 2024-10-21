@@ -1,7 +1,7 @@
-import { useState } from "react";
-import Logo from "../Logo";
-import NavElement from "./NavElement";
-import BurgerElement from "./BurgerElement";
+import { useState } from 'react';
+import Logo from '../Logo';
+import NavElement from './NavElement';
+import BurgerElement from './BurgerElement';
 
 const NavMobile = ({ navarray }) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -28,7 +28,7 @@ const NavMobile = ({ navarray }) => {
                 id="navMenu"
                 className="has-background-dark has-text-white"
                 style={{
-                    transform: `translateY(${isMenuOpen ? "0" : "-100%"})`,
+                    transform: `translateY(${isMenuOpen ? '0' : '-100%'})`,
                 }}
             >
                 <div className="wrapper wrapper-enter-done">
@@ -38,6 +38,7 @@ const NavMobile = ({ navarray }) => {
                                 {...item}
                                 isOpened={item.title === openedNavElement}
                                 onClick={navItemOnClick(item.title)}
+                                key={item.title}
                             />
                         ))}
                     </div>
