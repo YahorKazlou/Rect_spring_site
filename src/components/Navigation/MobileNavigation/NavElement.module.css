@@ -1,0 +1,76 @@
+.navbarItem {
+    padding: 0px;
+    display: inline;
+    position: relative;
+    align-items: center;
+    line-height: 1.5;
+}
+
+.navbarDropdown .navbarItem {
+    padding: 0.375rem 1rem;
+    padding-right: 3rem;
+    display: block;
+}
+
+div.navbarItem {
+    font-size: 19.2px;
+    padding: 0px 0px;
+    color: #98afae;
+    font-family: 'Open Sans', sans-serif;
+    height: 35px;
+}
+
+.hasDropdown > span {
+    border-bottom: 1px solid hsla(0, 0%, 100%, 0.4);
+    display: block;
+    height: 60px;
+    margin: 1rem 0;
+    padding: 0;
+    position: relative;
+    align-items: center;
+}
+
+.navbarLink {
+    font-size: 2rem;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    color: #fff;
+    height: 59px;
+}
+.navbarLink:after {
+    border-color: #485fc7;
+    right: 0.5rem;
+    border: 3px solid #98afae;
+    border-width: 0 0 3px 3px;
+    scale: 0.7;
+    border-radius: 2px;
+    border-right: 0;
+    border-top: 0;
+    content: ' ';
+    display: block;
+    height: 0.625em;
+    margin-top: -0.6em;
+    pointer-events: none;
+    position: absolute;
+    top: 60%;
+    transform: rotate(-45deg);
+    transform-origin: center;
+    width: 0.625em;
+}
+
+.navbarLink:hover {
+    color: #6db33f;
+}
+
+.subitemsShow > .navbarDropdown {
+    display: block;
+}
+
+.navbarDropdown {
+    display: none;
+    position: static;
+    background-color: unset;
+    box-shadow: none;
+    padding: 0px;
+    border-radius: unset;
+}

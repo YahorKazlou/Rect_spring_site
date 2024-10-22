@@ -1,0 +1,94 @@
+.hero {
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    margin: 0 auto;
+    margin-bottom: 3rem !important;
+    margin-top: 3rem !important;
+}
+
+.header {
+    font-size: 3.5rem;
+    margin-top: 40px;
+}
+
+.description {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 2.2rem;
+    margin-top: 20px;
+    font-size: 1.5rem;
+    max-width: 960px;
+}
+
+.buttonContainer {
+    padding-top: 1rem !important;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.button {
+    text-transform: uppercase;
+    background: transparent;
+    border: 2px solid #111;
+    display: inline-block;
+    font-size: 0.9rem;
+    font-weight: 700;
+    height: auto;
+    line-height: 20px;
+    overflow: hidden;
+    padding: 15px 30px;
+    position: relative;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+    z-index: 0;
+}
+
+.button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #191e1e;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: -1;
+}
+
+.button:hover {
+    color: white;
+}
+
+.button:hover::before {
+    transform: translateX(0);
+}
+
+@media (max-width: 900px) {
+    .container {
+        margin: 48px 0px;
+        padding: 0px 32px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media screen and (min-width: 1216px) {
+    .container {
+        max-width: 1152px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .description {
+        font-size: 1.3rem;
+    }
+    .container {
+        padding: 0 2rem;
+    }
+}

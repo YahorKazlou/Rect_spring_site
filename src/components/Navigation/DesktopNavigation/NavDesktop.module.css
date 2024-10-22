@@ -1,0 +1,26 @@
+.navbarDesktop {
+    margin: 0 auto;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbarMenuMesktop {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (min-width: 1024px) {
+    .navbarDesktop {
+        max-width: 960px;
+    }
+}
+
+@media screen and (min-width: 1216px) {
+    .navbarDesktop {
+        max-width: 1152px;
+    }
+}
