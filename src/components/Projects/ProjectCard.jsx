@@ -1,15 +1,17 @@
+import styles from './index.module.css';
+
 const ProjectCard = ({ link, imgUrl, name, text }) => (
       <article>
-            <a className="box is-special item" href={link}>
-                  <div className="project-item">
-                        <div className="image">
+            <a className={styles.card} href={link}>
+                  <div className={styles.projectItem}>
+                        <div className={styles.image}>
                               <img src={imgUrl} alt={name} />
                         </div>
-                        <div className="project-info">
-                              <h1 className="is-size-4 has-text-weight-medium">
+                        <div className={styles.projectInfo}>
+                              <h1>
                                     {name}
                               </h1>
-                              <p className="py-3">{text}</p>
+                              <p className={styles.py3}>{text}</p>
                         </div>
                   </div>
             </a>

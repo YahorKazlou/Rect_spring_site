@@ -3,6 +3,7 @@ import NavMobile from './MobileNavigation/NavMobile';
 import getWindowDimensions from '../../hooks/useWindowDimensions';
 import SpringIntialisr from '../../assets/spring-initializr';
 import { NAV_ELEMENT_TYPES } from '../../constants/navigation';
+import styles from './index.module.css';
 
 const navArray = [
     {
@@ -70,13 +71,13 @@ const Navigation = () => {
     const { width } = getWindowDimensions();
     if (width > 1000) {
         return (
-            <div className="header">
+            <div className={styles.header}>
                 <NavDesktop navarray={navArray} />
             </div>
         );
     } else {
         return (
-            <div className="header">
+            <div className={styles.header}>
                 <NavMobile navarray={navArray} />
             </div>
         );
