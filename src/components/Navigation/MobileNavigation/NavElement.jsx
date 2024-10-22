@@ -1,13 +1,21 @@
 import DropdownElement from './DropdownElement';
+import classNames from 'classnames/bind';
+import styles from './NavElement.module.css';
+
+const cx = classNames.bind(styles);
 
 const NavElement = ({ title, items, isOpened, onClick }) => (
     <div
-        className={`navbar-item has-dropdown is-hoverable navbar-group-item ${isOpened ? 'subitems-show' : ''}`}
+        className={cx({
+            navbarItem: true,
+            hasDropdown: true,
+            subitemsShow: isOpened,
+        })}
     >
-        <span className="navbar-link" onClick={onClick}>
+        <span className={styles.navbarLink} onClick={onClick}>
             {title}
         </span>
-        <ul className="navbar-dropdown is-boxed">
+        <ul className={styles.navbarDropdown}>
             {items.map((item) => (
                 <DropdownElement {...item} key={item.name} />
             ))}

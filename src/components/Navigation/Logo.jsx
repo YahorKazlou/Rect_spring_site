@@ -1,7 +1,7 @@
 import styles from './Logo.module.css';
 
 const Logo = () => (
-    <a className={styles.navbarItem} href="">
+    <a className={styles.navbarItem} href="/">
         <svg
             version="1.1"
             xmlns="http://www.w3.org/2000/svg"

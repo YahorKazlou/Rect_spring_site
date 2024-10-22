@@ -2,6 +2,10 @@ import { useState } from 'react';
 import Logo from '../Logo';
 import NavElement from './NavElement';
 import BurgerElement from './BurgerElement';
+import classNames from 'classnames/bind';
+import styles from './NavMobile.module.css';
+
+const cx = classNames.bind(styles);
 
 const NavMobile = ({ navarray }) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -18,21 +22,15 @@ const NavMobile = ({ navarray }) => {
         }
     };
     return (
-        <div className="container navbar-mobile is-hidden-desktop">
-            <div className="navbar-brand">
+        <div className={styles.container}>
+            <div>
                 <Logo />
                 <BurgerElement isMenuOpen={isMenuOpen} onClick={toggleMenu} />
             </div>
 
-            <div
-                id="navMenu"
-                className="has-background-dark has-text-white"
-                style={{
-                    transform: `translateY(${isMenuOpen ? '0' : '-100%'})`,
-                }}
-            >
-                <div className="wrapper wrapper-enter-done">
-                    <div className="navbar-menu-mobile">
+            <div className={cx({ navMenu: true, isMenuOpen })}>
+                <div>
+                    <div className={styles.navbarMenuMobile}>
                         {navarray.map((item) => (
                             <NavElement
                                 {...item}
