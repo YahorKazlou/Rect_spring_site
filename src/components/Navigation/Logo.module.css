@@ -1,0 +1,26 @@
+.navbarItem {
+    padding: 0.5rem 0.75rem;
+    position: relative;
+    align-items: center;
+    display: flex;
+    line-height: 1.5;
+}
+
+.logo {
+    width: 300px;
+}
+
+.logo .st0,
+.logo .st1 {
+    fill: #6cb52d;
+}
+
+.logo .st3 {
+    fill: #fff;
+}
+
+@media (max-width: 1000px) {
+    .logo {
+        width: 200px;
+    }
+}
