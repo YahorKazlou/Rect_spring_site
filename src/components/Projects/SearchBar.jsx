@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import debounce from '../../utils/debounce';
-import styles from './index.module.css';
+import styles from './SearchBar.module.css';
 
 const SearchBar = ({ onSearch }) => {
     const [value, setValue] = useState('');

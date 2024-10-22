@@ -1,4 +1,5 @@
 import { NAV_ELEMENT_TYPES } from '../../../constants/navigation';
+import styles from './index.module.css';
 
 const DropdownElement = ({ type, name, icon }) => (
     <li>

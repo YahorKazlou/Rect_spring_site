@@ -1,5 +1,5 @@
 import ProjectCard from './ProjectCard';
-import styles from './index.module.css';
+import styles from './ProjectsList.module.css';
 
 const ProjectsList = ({ projects }) => {
     return (

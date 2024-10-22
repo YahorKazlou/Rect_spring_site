@@ -1,0 +1,40 @@
+.container {
+    margin: 0 auto;
+}
+
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 82.5%;
+    margin-left: 84px;
+    margin-right: 84px;
+}
+
+@media (max-width: 800px) {
+    .list {
+        margin-left: 64px;
+        margin-right: 64px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .list {
+        margin-left: 82px;
+        margin-right: 82px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media screen and (min-width: 1216px) {
+    .container:not(.is-max-desktop) {
+        max-width: 1152px;
+    }
+}

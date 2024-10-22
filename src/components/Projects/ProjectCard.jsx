@@ -1,4 +1,4 @@
-import styles from './index.module.css';
+import styles from './ProjectCard.module.css';
 
 const ProjectCard = ({ link, imgUrl, name, text }) => (
       <article>
