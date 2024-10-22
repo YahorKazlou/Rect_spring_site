@@ -1,12 +1,13 @@
 import Logo from '../Logo';
 import NavElement from './NavElement';
+import styles from './NavDesktop.module.css';
 
 const NavDesktop = ({ navarray }) => (
-    <div className="container navbar-desktop is-hidden-mobile is-hidden-tablet-only">
-        <div className="navbar-brand">
+    <div className={styles.navbarDesktop}>
+        <div>
             <Logo />
         </div>
-        <div className="navbar-menu-desktop">
+        <div className={styles.navbarMenuMesktop}>
             {navarray.map((item) => (
                 <NavElement {...item} key={item.key} />
             ))}
