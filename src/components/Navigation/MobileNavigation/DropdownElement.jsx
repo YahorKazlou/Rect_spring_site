@@ -4,7 +4,7 @@ import styles from './DropdownElement.module.css';
 
 const cx = classNames.bind(styles);
 
-const DropdownElement = ({ type, name, icon }) => (
+const DropdownElement = ({ type, name }) => (
     <li>
         {type === NAV_ELEMENT_TYPES.SUBHEADER ? (
             <div className={styles.navbarItem}>{name}</div>
@@ -17,7 +17,6 @@ const DropdownElement = ({ type, name, icon }) => (
                 href="/"
             >
                 {name}
-                {icon}
             </a>
         )}
     </li>
