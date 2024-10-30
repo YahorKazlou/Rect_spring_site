@@ -1,0 +1,33 @@
+.navbarItem {
+    padding: 0.375rem 1rem;
+    padding-right: 3rem;
+    display: block;
+    position: relative;
+    align-items: center;
+    line-height: 1.5;
+}
+
+div.navbarItem {
+    font-size: 19.2px;
+    padding: 0px 0px;
+    color: #98afae;
+    font-family: 'Open Sans', sans-serif;
+    height: 35px;
+}
+
+a.navbarItem {
+    transition: color 0.5s ease;
+    color: #98afae;
+    font-size: 1.2rem;
+    padding: 0 0 !important;
+    font-family: 'Open Sans', sans-serif;
+    height: 35px;
+}
+a.navbarItem:hover {
+    color: #6db33f;
+}
+
+.viewAllProjects {
+    color: #086dc3 !important;
+    margin-bottom: 24px;
+}

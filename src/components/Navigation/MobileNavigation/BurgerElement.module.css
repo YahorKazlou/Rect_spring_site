@@ -1,0 +1,49 @@
+.navbarBurger {
+    color: #4a4a4a;
+    position: absolute;
+    top: 0;
+    right: 28px;
+    z-index: 10;
+}
+
+.navbarBurger:active {
+    color: white;
+}
+
+.hamburgerReact {
+    cursor: pointer;
+    height: 48px;
+    position: relative;
+    transition: 0.4s cubic-bezier(0, 0, 0, 1);
+    user-select: none;
+    width: 48px;
+    outline: none;
+    transform: none;
+    color: #4a4a4a;
+}
+
+.opened {
+    color: white;
+}
+
+.stick {
+    background: currentcolor;
+    height: 2px;
+    left: 12px;
+    position: absolute;
+    width: 24px;
+    transition: 0.4s cubic-bezier(0, 0, 0, 1);
+    transform: none;
+}
+
+.top1 {
+    top: 16px;
+}
+
+.top2 {
+    top: 23px;
+}
+
+.top3 {
+    top: 30px;
+}

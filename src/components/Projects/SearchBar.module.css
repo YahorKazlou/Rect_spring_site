@@ -1,0 +1,15 @@
+.searchInput {
+    position: relative;
+    align-items: center;
+    display: flex;
+    top: 45;
+    font-family: "Open Sans", sans-serif;
+    padding: 3px;
+    color: #000000;
+    font-weight: 600;
+    font-size: 0.94rem;
+    border: 2px solid #111;
+    border-radius: 0px;
+    background: transparent;
+    margin: 0 auto;
+}

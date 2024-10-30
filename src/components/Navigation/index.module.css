@@ -1,0 +1,17 @@
+.header {
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border-bottom: 1px solid #ebf2f2;
+}
+
+@media (max-width: 1000px) {
+
+    .header {
+        position: fixed;
+        width: 100%;
+        z-index: 999;
+        background: white;
+        padding: 8px 12px;
+    }
+
+}
