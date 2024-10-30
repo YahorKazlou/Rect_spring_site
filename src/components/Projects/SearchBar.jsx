@@ -1,24 +1,16 @@
-import { useState } from 'react';
+import Input from '../common/Input';
 import debounce from '../../utils/debounce';
 import styles from './SearchBar.module.css';
 
 const SearchBar = ({ onSearch }) => {
-    const [value, setValue] = useState('');
-
-    const onChange = (e) => {
-        const value = e.target.value;
-        setValue(value);
+    const onChange = (value) => {
         debounce(onSearch, 300)(value);
     };
 
     return (
-        <input
-            value={value}
-            onChange={onChange}
-            type="text"
-            className={styles.searchInput}
-            placeholder="search..."
-        />
+        <div className={styles.searchInput}>
+            <Input onChange={onChange} type="text" placeholder="search..." />
+        </div>
     );
 };
 

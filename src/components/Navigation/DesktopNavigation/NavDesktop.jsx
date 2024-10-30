@@ -9,7 +9,7 @@ const NavDesktop = ({ navarray }) => (
         </div>
         <div className={styles.navbarMenuMesktop}>
             {navarray.map((item) => (
-                <NavElement {...item} key={item.key} />
+                <NavElement {...item} key={item.title} />
             ))}
         </div>
     </div>
