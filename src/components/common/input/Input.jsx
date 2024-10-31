@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import styles from './Input.module.css';
 
-const Input = ({ onChange, ...otherProps }) => {
+export const Input = ({ onChange, ...otherProps }) => {
     const [value, setValue] = useState('');
 
     const onChangeValue = (e) => {
@@ -22,4 +22,3 @@ const Input = ({ onChange, ...otherProps }) => {
     );
 };
 
-export default Input;

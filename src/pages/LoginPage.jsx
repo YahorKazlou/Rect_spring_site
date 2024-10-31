@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import styles from '../App.module.css';
-import Input from '../components/common/Input';
+import { Input } from '../components/common/input/Input';
 import { useDispatch } from 'react-redux';
 import { login as loginAction } from '../store/user/actions';
 import Logo from '../components/Navigation/Logo';

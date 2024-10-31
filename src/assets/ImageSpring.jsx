@@ -1,6 +1,6 @@
-import styles from './SpringInitializr.module.css';
+import styles from './ImageSpring.module.css';
 
-const SpringIntialisr = () => (
+const ImageSpring = () => (
     <svg
         aria-hidden="true"
         focusable="false"
@@ -18,4 +18,4 @@ const SpringIntialisr = () => (
     </svg>
 );
 
-export default SpringIntialisr;
+export default ImageSpring;

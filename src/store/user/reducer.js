@@ -1,8 +1,8 @@
-import { USER_LOGIN } from './actions';
+import { LOGIN } from './actions';
 
 const userReducer = (state = {}, action) => {
     switch (action.type) {
-        case USER_LOGIN:
+        case LOGIN:
             return {
                 ...state,
                 ...action.payload,

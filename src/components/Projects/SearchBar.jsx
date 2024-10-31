@@ -1,4 +1,4 @@
-import Input from '../common/Input';
+import { Input } from '../common/input/Input';
 import debounce from '../../utils/debounce';
 import styles from './SearchBar.module.css';
 
