@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import styles from './Input.module.css';
+import PropTypes from 'prop-types';
 
 export const Input = ({ onChange, ...otherProps }) => {
     const [value, setValue] = useState('');
@@ -22,3 +23,8 @@ export const Input = ({ onChange, ...otherProps }) => {
     );
 };
 
+Input.propTypes = {
+    onChange: PropTypes.func.isRequired,
+    placeholder: PropTypes.string,
+    type: PropTypes.string,
+};
