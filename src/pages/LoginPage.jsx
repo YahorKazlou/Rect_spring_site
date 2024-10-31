@@ -4,11 +4,8 @@ import { Input } from '../components/common/input/Input';
 import { useDispatch } from 'react-redux';
 import { login as loginAction } from '../store/user/actions';
 import Logo from '../components/Navigation/Logo';
+import {USER_CREDENTIALS} from '../constants/credentials'
 
-const USER_CREDENTIALS = {
-    login: 'admin',
-    password: '1234',
-};
 
 function LoginPage() {
     const [login, setLogin] = useState('');
