@@ -4,18 +4,7 @@ import { Input } from '../components/common/input/Input';
 import { useDispatch } from 'react-redux';
 import { login as loginAction } from '../store/user/actions';
 import Logo from '../components/Navigation/Logo';
-
-const callLoginApi = async (login, password) => {
-    const requestOptions = {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ login, password }),
-    };
-
-    const response = await fetch('http://localhost:3001/login', requestOptions);
-    const { status, body } = response;
-    return { status, body };
-};
+import { loginApi } from '../api';
 
 function LoginPage() {
     const [login, setLogin] = useState('');
@@ -24,7 +13,7 @@ function LoginPage() {
     const dispatch = useDispatch();
 
     const onLogin = async () => {
-        const { status } = await callLoginApi(login, password);
+        const { status } = await loginApi(login, password);
         if (status === 200 || status === 204)
             dispatch(
                 loginAction({
