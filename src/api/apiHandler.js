@@ -12,6 +12,6 @@ export const apiHandler = async (endpoint, method = 'GET', requestBody) => {
         `http://localhost:3001${endpoint}`,
         requestOptions
     );
-    const { status, body } = response;
-    return { status, body };
+
+    return response
 };
