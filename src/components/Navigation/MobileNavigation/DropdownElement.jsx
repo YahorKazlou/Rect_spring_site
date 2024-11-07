@@ -1,4 +1,4 @@
-import { NAV_ELEMENT_TYPES } from '../../../constants/navigation';
+import { NAV_ELEMENT_TYPES } from '../../../constants';
 import classNames from 'classnames/bind';
 import styles from './DropdownElement.module.css';
 

@@ -4,8 +4,7 @@ import { Input } from '../components/common/input/Input';
 import { useDispatch } from 'react-redux';
 import { login as loginAction } from '../store/user/actions';
 import Logo from '../components/Navigation/Logo';
-import {USER_CREDENTIALS} from '../constants/credentials'
-
+import { USER_CREDENTIALS } from '../constants';
 
 function LoginPage() {
     const [login, setLogin] = useState('');

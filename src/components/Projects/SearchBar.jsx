@@ -1,6 +1,7 @@
 import { Input } from '../common/input/Input';
 import debounce from '../../utils/debounce';
 import styles from './SearchBar.module.css';
+import { state } from '../../App';
 
 const SearchBar = ({ onSearch }) => {
     const onChange = (value) => {
@@ -15,3 +16,8 @@ const SearchBar = ({ onSearch }) => {
 };
 
 export default SearchBar;
+
+const oneF = () => {
+
+};
+

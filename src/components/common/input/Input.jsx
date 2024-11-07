@@ -8,7 +8,7 @@ export const Input = ({ onChange, ...otherProps }) => {
     const onChangeValue = (e) => {
         const value = e.target.value;
         setValue(value);
-        onChange?.(value);
+        onChange(value);
     };
 
     return (

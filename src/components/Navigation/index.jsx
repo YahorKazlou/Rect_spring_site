@@ -2,7 +2,7 @@ import NavDesktop from './DesktopNavigation/NavDesktop';
 import NavMobile from './MobileNavigation/NavMobile';
 import getWindowDimensions from '../../hooks/useWindowDimensions';
 import ImageSpring from '../../assets/ImageSpring';
-import { NAV_ELEMENT_TYPES } from '../../constants/navigation';
+import { NAV_ELEMENT_TYPES } from '../../constants';
 import styles from './index.module.css';
 
 const navArray = [
