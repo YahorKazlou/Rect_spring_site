@@ -17,7 +17,4 @@ const SearchBar = ({ onSearch }) => {
 
 export default SearchBar;
 
-const oneF = () => {
-
-};
-
+const oneF = () => {};

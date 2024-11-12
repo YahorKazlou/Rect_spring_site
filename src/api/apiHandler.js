@@ -13,5 +13,5 @@ export const apiHandler = async (endpoint, method = 'GET', requestBody) => {
         requestOptions
     );
 
-    return response
+    return response;
 };
