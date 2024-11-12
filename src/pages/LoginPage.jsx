@@ -4,7 +4,6 @@ import { Input } from '../components/common/input/Input';
 import { useDispatch } from 'react-redux';
 import { login as loginAction } from '../store/user/actions';
 import Logo from '../components/Navigation/Logo';
-import { loginApi } from '../api';
 
 function LoginPage() {
     const [login, setLogin] = useState('');
@@ -12,15 +11,8 @@ function LoginPage() {
 
     const dispatch = useDispatch();
 
-    const onLogin = async () => {
-        const { status } = await loginApi(login, password);
-        if (status === 200 || status === 204)
-            dispatch(
-                loginAction({
-                    login,
-                    password,
-                })
-            );
+    const onLogin = () => {
+        dispatch(loginAction(login, password));
     };
 
     return (
