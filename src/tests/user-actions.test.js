@@ -13,6 +13,9 @@ describe('userActions', () => {
     beforeEach(() => {
         fetch.resetMocks();
     });
+    it('failed test', () => {
+        expect(true).toBeFalsy();
+    });
     it('Login successful, creates LOGIN_PENDING and LOGIN_SUCCESS', async () => {
         const expected = [
             { type: LOGIN_PENDING },
