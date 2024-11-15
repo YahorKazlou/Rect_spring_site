@@ -6,3 +6,46 @@
         padding-top: 52px;
     }
 }
+.loginHeader {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    padding: 15px 30px;
+    font-size: 2.2rem;
+}
+.button {
+    display: flex;
+    margin: 0 auto;
+    text-transform: uppercase;
+    background: transparent;
+    border: 2px solid #111;
+    font-size: 0.9rem;
+    font-weight: 700;
+    height: auto;
+    overflow: hidden;
+    padding: 15px 30px;
+    position: relative;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+    z-index: 0;
+}
+.button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #191e1e;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: -1;
+}
+
+.button:hover {
+    color: white;
+}
+
+.button:hover::before {
+    transform: translateX(0);
+}
