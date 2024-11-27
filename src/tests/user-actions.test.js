@@ -13,7 +13,7 @@ describe('userActions', () => {
     beforeEach(() => {
         fetch.resetMocks();
     });
-    it('Login successful, creates LOGIN_PENDING and LOGIN_SUCCESS', async () => {
+    it('Should dispatch LOGIN_PENDING and LOGIN_SUCCESS on successful login', async () => {
         const expected = [
             { type: LOGIN_PENDING },
             {
@@ -39,7 +39,7 @@ describe('userActions', () => {
         expect(dispatch.mock.calls[0][0]).toEqual(expected[0]);
         expect(dispatch.mock.calls[1][0]).toEqual(expected[1]);
     });
-    it('Login failed, creates LOGIN_PENDING and LOGIN_ERROR', async () => {
+    it('Should dispatch LOGIN_PENDING and LOGIN_SUCCESS if login failed', async () => {
         const expected = [{ type: LOGIN_PENDING }, { type: LOGIN_ERROR }];
 
         fetch.mockResponseOnce(
