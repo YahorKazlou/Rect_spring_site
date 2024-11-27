@@ -1,7 +1,7 @@
 .hasBackgroundLight {
     background-color: #ebf2f2 !important;
     margin-bottom: 3rem !important;
-    margin-top: 3rem !important;    
+    margin-top: 3rem !important;
 }
 
 @media (max-width: 900px) {

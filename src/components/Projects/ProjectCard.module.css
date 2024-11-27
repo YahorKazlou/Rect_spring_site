@@ -49,7 +49,6 @@ a.card:hover {
 }
 
 @media (max-width: 1000px) {
-    
     .projectItem {
         flex-direction: column;
     }
