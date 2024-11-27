@@ -1,7 +1,9 @@
 import ProjectCard from './ProjectCard';
+import { useSelector } from 'react-redux';
 import styles from './ProjectsList.module.css';
 
-const ProjectsList = ({ projects }) => {
+const ProjectsList = () => {
+    const projects = useSelector((state) => state.projects);
     return (
         <div className={styles.container}>
             <div className={styles.list}>
