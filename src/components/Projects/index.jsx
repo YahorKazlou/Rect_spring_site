@@ -2,23 +2,23 @@ import { useState, useEffect } from 'react';
 import ProjectsList from './ProjectsList';
 import SearchBar from './SearchBar';
 import styles from './index.module.css';
-import { getProjectsApi } from '../../api';
+import { getProjects } from '../../api';
 
 const Projects = () => {
     const [projects, setProjects] = useState([]);
 
-    const handleApi = async (searchTerm) => {
-        const response = await getProjectsApi(searchTerm);
+    const handle = async (searchTerm) => {
+        const response = await getProjects(searchTerm);
         const data = await response.json();
         if (response.status === 200) setProjects(data.data);
     };
 
     useEffect(() => {
-        handleApi();
+        handle();
     }, []);
 
     const filterProjects = (searchTerm) => {
-        handleApi(searchTerm);
+        handle(searchTerm);
     };
 
     return (

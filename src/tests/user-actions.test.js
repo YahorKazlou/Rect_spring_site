@@ -4,7 +4,7 @@ import {
     LOGIN_PENDING,
     LOGIN_SUCCESS,
 } from '../store/user/actions';
-import { loginApi } from '../api';
+import { authLogin } from '../api';
 import { enableFetchMocks } from 'jest-fetch-mock';
 
 enableFetchMocks();

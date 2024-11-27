@@ -1,4 +1,4 @@
-import { loginApi } from '../../api';
+import { authLogin } from '../../api';
 
 export const LOGIN_PENDING = 'LOGIN_PENDING';
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
@@ -19,7 +19,7 @@ export const loginError = () => ({
 
 export const login = (login, password) => async (dispatch) => {
     dispatch(loginPending());
-    const { status } = await loginApi(login, password);
+    const { status } = await authLogin(login, password);
     if (status === 200 || status === 204) {
         dispatch(
             loginSuccess({
