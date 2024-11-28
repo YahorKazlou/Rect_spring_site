@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
+import SignupPage from './pages/SignupPage';
 import AuthProtectedRoute from './components/common/AuthProtectedRoute';
 import GuestProtectedRoute from './components/common/GuestProtectedRoute';
 
@@ -19,6 +20,14 @@ const router = createBrowserRouter([
         element: (
             <GuestProtectedRoute>
                 <LoginPage />
+            </GuestProtectedRoute>
+        ),
+    },
+    {
+        path: 'signup',
+        element: (
+            <GuestProtectedRoute>
+                <SignupPage />
             </GuestProtectedRoute>
         ),
     },
