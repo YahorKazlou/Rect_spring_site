@@ -51,6 +51,7 @@ export const signupError = () => ({
 
 export const signup = (userData) => async (dispatch) => {
     dispatch(signupPending());
+    console.log(userData);
     const { status } = await authSignup(userData);
     if (status === 200 || status === 204) {
         dispatch(signupSuccess(userData));

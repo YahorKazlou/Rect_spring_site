@@ -17,14 +17,14 @@ function SignupPage() {
 
     const onSignup = () => {
         dispatch(
-            signupAction(
+            signupAction({
                 username,
                 password,
                 repeatPassword,
                 firstName,
                 lastName,
-                age
-            )
+                age,
+            })
         );
     };
 
