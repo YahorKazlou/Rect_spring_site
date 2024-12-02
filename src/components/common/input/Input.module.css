@@ -11,6 +11,15 @@
     border: 2px solid #111;
     border-radius: 0px;
     background: transparent;
-    margin: 0 auto;
+    margin: 5px auto;
     padding: 10px;
+}
+
+.inputError {
+    border-color: red;
+}
+
+.errorMessage {
+    color: red;
+    text-align: center;
 }

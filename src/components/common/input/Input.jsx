@@ -1,8 +1,11 @@
 import { useState } from 'react';
+import classNames from 'classnames/bind';
 import styles from './Input.module.css';
 import PropTypes from 'prop-types';
 
-export const Input = ({ onChange, ...otherProps }) => {
+const cx = classNames.bind(styles);
+
+export const Input = ({ onChange, errorMsg, ...otherProps }) => {
     const [value, setValue] = useState('');
 
     const onChangeValue = (e) => {
@@ -16,9 +19,10 @@ export const Input = ({ onChange, ...otherProps }) => {
             <input
                 value={value}
                 onChange={onChangeValue}
-                className={styles.input}
+                className={cx({ input: true, inputError: !!errorMsg })}
                 {...otherProps}
             />
+            {errorMsg && <div className={styles.errorMessage}>{errorMsg}</div>}
         </div>
     );
 };

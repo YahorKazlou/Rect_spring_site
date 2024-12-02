@@ -45,17 +45,19 @@ export const signupSuccess = (userData) => ({
     payload: userData,
 });
 
-export const signupError = () => ({
+export const signupError = (error) => ({
     type: SIGNUP_ERROR,
+    payload: error,
 });
 
 export const signup = (userData) => async (dispatch) => {
     dispatch(signupPending());
-    console.log(userData);
-    const { status } = await authSignup(userData);
+    const response = await authSignup(userData);
+    const { status } = response;
+    const data = await response.json();
     if (status === 200 || status === 204) {
         dispatch(signupSuccess(userData));
     } else {
-        dispatch(signupError());
+        dispatch(signupError(data));
     }
 };
