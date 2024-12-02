@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import styles from '../App.module.css';
+import styles from './SignupPage.module.css';
 import { Input } from '../components/common/input/Input';
+import { Button } from '../components/common/button/button';
 import { useDispatch, useSelector } from 'react-redux';
 import { signup as signupAction } from '../store/user/actions';
 import Logo from '../components/Navigation/Logo';
@@ -33,7 +34,7 @@ function SignupPage() {
     return (
         <div className={styles.main}>
             <Logo />
-            <h1 className={styles.loginHeader}>Please signup</h1>
+            <h1 className={styles.signupHeader}>Please signup</h1>
             <Input
                 placeholder="Username"
                 onChange={setUsername}
@@ -67,9 +68,9 @@ function SignupPage() {
                 onChange={setAge}
                 errorMsg={error?.field === 'age' && error.error}
             />
-            <button className={styles.button} onClick={onSignup}>
+            <Button onClick={onSignup}>
                 {loading ? 'Loading...' : 'Sign Up'}
-            </button>
+            </Button>
         </div>
     );
 }

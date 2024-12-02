@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import styles from '../App.module.css';
+import styles from './LoginPage.module.css';
 import { Input } from '../components/common/input/Input';
+import { Button } from '../components/common/button/button';
 import { useDispatch } from 'react-redux';
 import { login as loginAction } from '../store/user/actions';
 import Logo from '../components/Navigation/Logo';
@@ -25,9 +26,7 @@ function LoginPage() {
                 placeholder="Password"
                 onChange={setPassword}
             />
-            <button className={styles.button} onClick={onLogin}>
-                Login
-            </button>
+            <Button onClick={onLogin}>Login</Button>
         </div>
     );
 }

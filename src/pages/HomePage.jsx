@@ -1,7 +1,7 @@
 import Navigation from '../components/Navigation';
 import MainBlock from '../components/MainBlock';
 import Projects from '../components/Projects';
-import styles from '../App.module.css';
+import styles from './HomePage.module.css';
 
 function HomePage() {
     return (
