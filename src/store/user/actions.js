@@ -19,7 +19,9 @@ export const loginError = () => ({
 
 export const login = (login, password) => async (dispatch) => {
     dispatch(loginPending());
-    const { status } = await authLogin(login, password);
+    const response = await authLogin(login, password);
+    const { status } = response;
+    const data = await response.json();
     if (status === 200 || status === 204) {
         dispatch(
             loginSuccess({
@@ -27,6 +29,8 @@ export const login = (login, password) => async (dispatch) => {
                 password,
             })
         );
+        localStorage.setItem('authToken', data?.authToken);
+        localStorage.setItem('refreshToken', data?.refreshToken);
     } else {
         dispatch(loginError());
     }
