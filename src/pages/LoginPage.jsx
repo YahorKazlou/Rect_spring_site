@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router';
 import styles from './LoginPage.module.css';
 import { Input } from '../components/common/input/Input';
 import { Button } from '../components/common/button/button';
@@ -10,10 +11,15 @@ function LoginPage() {
     const [login, setLogin] = useState('');
     const [password, setPassword] = useState('');
 
+    const navigate = useNavigate();
     const dispatch = useDispatch();
 
+    const onLoginSuccess = () => {
+        navigate('/');
+    };
+
     const onLogin = () => {
-        dispatch(loginAction(login, password));
+        dispatch(loginAction(login, password, onLoginSuccess));
     };
 
     return (

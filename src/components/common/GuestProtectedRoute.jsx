@@ -1,14 +1,12 @@
 import { Navigate } from 'react-router';
-import { useSelector } from 'react-redux';
 
 const GuestProtectedRoute = ({ children }) => {
-    const user = useSelector((state) => state.user.userData);
-
-    if (user?.login) {
+    const token = localStorage.getItem('authToken')
+    if (token) {
         return <Navigate to="/" replace />;
+    } else {
+        return children;
     }
-
-    return children;
 };
 
 export default GuestProtectedRoute;

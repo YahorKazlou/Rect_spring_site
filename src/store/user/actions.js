@@ -17,7 +17,7 @@ export const loginError = () => ({
     type: LOGIN_ERROR,
 });
 
-export const login = (login, password) => async (dispatch) => {
+export const login = (login, password, onSuccess) => async (dispatch) => {
     dispatch(loginPending());
     const response = await authLogin(login, password);
     const { status } = response;
@@ -31,6 +31,7 @@ export const login = (login, password) => async (dispatch) => {
         );
         localStorage.setItem('authToken', data?.authToken);
         localStorage.setItem('refreshToken', data?.refreshToken);
+        onSuccess?.();
     } else {
         dispatch(loginError());
     }
