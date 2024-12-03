@@ -1,7 +1,9 @@
 import { Navigate } from 'react-router';
+import useStorageValue from '../../hooks/useStorageValues';
 
 const GuestProtectedRoute = ({ children }) => {
-    const token = localStorage.getItem('authToken')
+    const token = useStorageValue('authToken');
+
     if (token) {
         return <Navigate to="/" replace />;
     } else {
