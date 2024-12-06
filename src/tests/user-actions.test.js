@@ -8,10 +8,19 @@ import { authLogin } from '../api';
 import { enableFetchMocks } from 'jest-fetch-mock';
 
 enableFetchMocks();
+const localStorageMock = {
+    getItem: jest.fn(),
+    setItem: jest.fn(),
+    clear: jest.fn(),
+};
+global.localStorage = localStorageMock;
 
 describe('userActions', () => {
     beforeEach(() => {
         fetch.resetMocks();
+        // global.localStorage = {
+        //     getItem: localStorageSpy,
+        // };
     });
     it('Should dispatch LOGIN_PENDING and LOGIN_SUCCESS on successful login', async () => {
         const expected = [
@@ -24,8 +33,7 @@ describe('userActions', () => {
                 },
             },
         ];
-
-        fetch.mockResponseOnce({ status: 200, body: { login: 'test_user' } });
+        fetch.mockResponseOnce(JSON.stringify({ status: 200, data: '12345' }));
 
         // mock the dispatch and getState functions from Redux thunk.
         const dispatch = jest.fn(),
@@ -42,11 +50,8 @@ describe('userActions', () => {
     it('Should dispatch LOGIN_PENDING and LOGIN_SUCCESS if login failed', async () => {
         const expected = [{ type: LOGIN_PENDING }, { type: LOGIN_ERROR }];
 
-        fetch.mockResponseOnce(
-            () => new Promise((resolve) => resolve({ status: 403 }))
-        );
-        // fetch.mockResponseOnce({ status: 403 });
-
+        fetch.mockResponseOnce(JSON.stringify({ status: 403, message: 'Forbidden' }), { status: 403 }); 
+        
         // mock the dispatch and getState functions from Redux thunk.
         const dispatch = jest.fn(),
             getState = jest.fn();
