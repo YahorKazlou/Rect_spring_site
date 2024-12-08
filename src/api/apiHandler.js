@@ -21,7 +21,7 @@ export const apiHandler = async (
 };
 
 export const authorisedApiHandler = (endpoint, method = 'GET', requestBody) => {
-    const token = localStorage.getItem('authToken');
+    const token = localStorage.getItem('accessToken');
 
     return apiHandler(endpoint, method, requestBody, {
         Authorization: `Bearer ${token}`,

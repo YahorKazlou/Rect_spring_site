@@ -2,7 +2,7 @@ import { Navigate } from 'react-router';
 import useStorageValue from '../../hooks/useStorageValues';
 
 const AuthProtectedRoute = ({ children }) => {
-    const token = useStorageValue('authToken');
+    const token = useStorageValue('accessToken');
 
     if (token) {
         return children;
