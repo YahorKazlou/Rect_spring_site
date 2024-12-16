@@ -29,7 +29,7 @@ export const login = (login, password, onSuccess) => async (dispatch) => {
                 password,
             })
         );
-        localStorage.setItem('authToken', data?.authToken);
+        localStorage.setItem('accessToken', data?.accessToken);
         localStorage.setItem('refreshToken', data?.refreshToken);
         onSuccess?.();
     } else {
