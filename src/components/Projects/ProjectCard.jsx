@@ -1,11 +1,11 @@
 import styles from './ProjectCard.module.css';
 
-const ProjectCard = ({ link, imgUrl, name, text }) => (
+const ProjectCard = ({ link, imgurl, name, text }) => (
     <article>
         <a className={styles.card} href={link}>
             <div className={styles.projectItem}>
                 <div className={styles.image}>
-                    <img src={imgUrl} alt={name} />
+                    <img src={imgurl} alt={name} />
                 </div>
                 <div className={styles.projectInfo}>
                     <h1>{name}</h1>

@@ -1,4 +1,4 @@
-import { apiHandler } from './apiHandler';
+import { authorisedApiHandler } from './apiHandler';
 
 export const getProjects = (searchTerm) => {
     let url = '/projects';
@@ -6,5 +6,5 @@ export const getProjects = (searchTerm) => {
         url += `?search=${searchTerm}`;
     }
 
-    return apiHandler(url);
+    return authorisedApiHandler(url);
 };

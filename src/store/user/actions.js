@@ -1,4 +1,4 @@
-import { authLogin } from '../../api';
+import { authLogin, authSignup } from '../../api';
 
 export const LOGIN_PENDING = 'LOGIN_PENDING';
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
@@ -17,9 +17,11 @@ export const loginError = () => ({
     type: LOGIN_ERROR,
 });
 
-export const login = (login, password) => async (dispatch) => {
+export const login = (login, password, onSuccess) => async (dispatch) => {
     dispatch(loginPending());
-    const { status } = await authLogin(login, password);
+    const response = await authLogin(login, password);
+    const { status } = response;
+    const data = await response.json();
     if (status === 200 || status === 204) {
         dispatch(
             loginSuccess({
@@ -27,7 +29,40 @@ export const login = (login, password) => async (dispatch) => {
                 password,
             })
         );
+        localStorage.setItem('accessToken', data?.accessToken);
+        localStorage.setItem('refreshToken', data?.refreshToken);
+        onSuccess?.();
     } else {
         dispatch(loginError());
+    }
+};
+
+export const SIGNUP_PENDING = 'SIGNUP_PENDING';
+export const SIGNUP_SUCCESS = 'SIGNUP_SUCCESS';
+export const SIGNUP_ERROR = 'SIGNUP_ERROR';
+
+export const signupPending = () => ({
+    type: SIGNUP_PENDING,
+});
+
+export const signupSuccess = (userData) => ({
+    type: SIGNUP_SUCCESS,
+    payload: userData,
+});
+
+export const signupError = (error) => ({
+    type: SIGNUP_ERROR,
+    payload: error,
+});
+
+export const signup = (userData) => async (dispatch) => {
+    dispatch(signupPending());
+    const response = await authSignup(userData);
+    const { status } = response;
+    const data = await response.json();
+    if (status === 200 || status === 204) {
+        dispatch(signupSuccess(userData));
+    } else {
+        dispatch(signupError(data));
     }
 };
