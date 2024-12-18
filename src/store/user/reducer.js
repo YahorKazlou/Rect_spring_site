@@ -1,9 +1,11 @@
 import {
     LOGIN_SUCCESS,
+} from './loginActions';
+import {
     SIGNUP_PENDING,
     SIGNUP_SUCCESS,
     SIGNUP_ERROR,
-} from './actions';
+} from './signupActions';
 
 const initialReducer = {
     userData: {},
