@@ -1,4 +1,7 @@
-import { getProjects as getProjectsApi, callApiWithRefresher } from '../../api';
+import {
+    getProjects as getProjectsApi,
+    callApiWithRefresher as callApi,
+} from '../../api';
 
 export const GET_PROJECTS_PENDING = 'GET_PROJECTS_PENDING';
 export const GET_PROJECTS_SUCCESS = 'GET_PROJECTS_SUCCESS';
@@ -20,9 +23,7 @@ export const getProjectsError = () => ({
 export const getProjects = (searchTerm) => async (dispatch) => {
     dispatch(getProjectsPending());
     try {
-        const response = await callApiWithRefresher(getProjectsApi, [
-            searchTerm,
-        ]);
+        const response = await callApi(getProjectsApi, [searchTerm]);
         const data = await response.json();
         const { status } = response;
         if (status === 200 || status === 204) {

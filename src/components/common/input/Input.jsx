@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 const cx = classNames.bind(styles);
 
-export const Input = ({ onChange, errorMsg, ...otherProps }) => {
+export const Input = ({ onChange, errorMsg, type, ...otherProps }) => {
     const [value, setValue] = useState('');
 
     const onChangeValue = (e) => {
@@ -20,6 +20,7 @@ export const Input = ({ onChange, errorMsg, ...otherProps }) => {
                 value={value}
                 onChange={onChangeValue}
                 className={cx({ input: true, inputError: !!errorMsg })}
+                type={type}
                 {...otherProps}
             />
             {errorMsg && <div className={styles.errorMessage}>{errorMsg}</div>}
