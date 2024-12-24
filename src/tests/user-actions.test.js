@@ -1,10 +1,11 @@
 import {
     login,
+} from '../store/user/actions';
+import {
     LOGIN_ERROR,
     LOGIN_PENDING,
     LOGIN_SUCCESS,
-} from '../store/user/actions';
-import { authLogin } from '../api';
+} from '../store/user/loginActions';
 import { enableFetchMocks } from 'jest-fetch-mock';
 
 enableFetchMocks();
