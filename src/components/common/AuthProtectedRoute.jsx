@@ -1,14 +1,14 @@
 import { Navigate } from 'react-router';
-import { useSelector } from 'react-redux';
+import useStorageValue from '../../hooks/useStorageValues';
 
 const AuthProtectedRoute = ({ children }) => {
-    const user = useSelector((state) => state.user);
+    const token = useStorageValue('accessToken');
 
-    if (!user?.login) {
+    if (token) {
+        return children;
+    } else {
         return <Navigate to="/login" replace />;
     }
-
-    return children;
 };
 
 export default AuthProtectedRoute;
